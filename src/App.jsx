@@ -22,7 +22,7 @@ function App() {
 
   function getIMCclassificacao(imc) {
     if (imc < 16.9) {
-      return "Muito abaixo do peso";
+      return "Magreza severa";
     } else if (imc >= 16.9 && imc < 18.5) {
       return "Abaixo do peso";
     } else if (imc >= 18.5 && imc < 25) {
@@ -30,11 +30,11 @@ function App() {
     } else if (imc >= 25 && imc < 30) {
       return "Acima do peso";
     } else if (imc >= 30 && imc < 35) {
-      return "Obesidade grau 1";
+      return "Obesidade I";
     } else if (imc >= 35 && imc < 40) {
-      return "Obesidade grau 2";
+      return "Obesidade II";
     } else if (imc >= 40) {
-      return "Obesidade grau 3";
+      return "Obesidade III";
     } else {
       return "";
     }
@@ -58,7 +58,7 @@ function App() {
           <div className="botao">
             <button type='submit'>Calcular</button>
           </div>
-          <div>
+          <div className='children-input-label'>
             <InputMask placeholder='Seu IMC' name='seuIMC' value={form.seuIMC || ''} readOnly />
             {form.classificacao && <p>O seu IMC é {form.seuIMC} <br /> Classificação: {form.classificacao}</p>}
           </div>
